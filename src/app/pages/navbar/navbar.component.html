@@ -6,7 +6,7 @@
     <ul><li class="searchbox">
       <div class="search-container">
         <div>
-          <input  matInput #input type="text"  id="search-input"
+          <input  matInput #input type="text"  
             class="search-input" placeholder="Search Emp Id/Name">
           <div class="search-icon">
             <mat-icon >search</mat-icon>
@@ -49,6 +49,12 @@
                 SETTLEMENT
               </button>
             </mat-list-item>
+            <mat-list-item>
+              <button routerLink="payment-settlement"  routerLinkActive="active" mat-button>
+                <mat-icon>add_box</mat-icon>
+                PENSION
+              </button>
+            </mat-list-item>
             <!-- <mat-list-item>
               <button routerLink="" routerLinkActive="active" mat-button>
                 <mat-icon>add_box</mat-icon>
@@ -57,7 +63,7 @@
             </mat-list-item> -->
            </mat-list>
         </mat-expansion-panel>
-        <mat-expansion-panel class="custom-expansion-panel">
+        <!-- <mat-expansion-panel class="custom-expansion-panel">
           <mat-expansion-panel-header>
             <mat-panel-title>
               <mat-icon>add_box</mat-icon>
@@ -85,7 +91,7 @@
               </button>
             </mat-list-item>
           </mat-list>
-        </mat-expansion-panel>
+        </mat-expansion-panel> -->
         
       
        

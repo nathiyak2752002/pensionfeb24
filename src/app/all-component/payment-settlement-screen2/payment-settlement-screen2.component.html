@@ -1,95 +1,371 @@
-<div class="card1">
+<div class="container">
+    <h1 class="pensiondetails">Pension Details</h1>
+    <form [formGroup]="pension">
+        <div class="row">
+            <div class="col">
+                <mat-label>PPO NO</mat-label>
+                <input  id="ppo" class="input form-control"type="text" formControlName="ppo" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Name</mat-label>
+                <input  id="name" class="input form-control"type="text" formControlName="name" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Designation</mat-label>
+                <input  id="designation" class="input form-control"type="text" formControlName="designation" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Office code</mat-label>
+                <input  id="officeCode" class="input form-control"type="text" formControlName="officeCode" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Grade</mat-label>
+                <input  id="grade" class="input form-control"type="text" formControlName="grade" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>DOB</mat-label>
+                <input  id="dob" class="input form-control" type="date" formControlName="dob" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Age</mat-label>
+                <input  id="age" class="input form-control"type="text" formControlName="age" mat-input>
+            </div>
+        </div>    
+        <div class="row">
+            <div class="col">
+                <mat-label>Address</mat-label>
+                <input  id="address" class="input form-control"type="text" formControlName="address" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Mobile Number</mat-label>
+                <input  id="mobileNumber" class="input form-control"type="text" formControlName="mobileNumber" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Email ID</mat-label>
+                <input  id="emailId" class="input form-control"type="text" formControlName="emailId" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Pan Number</mat-label>
+                <input  id="panNumber" class="input form-control"type="text" formControlName="panNumber" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Aadhar Number</mat-label>
+                <input  id="aadharNo" class="input form-control"type="text" formControlName="aadharNo" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Bank Name</mat-label>
+                <input  id="bankName" class="input form-control"type="text" formControlName="bankName" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Bank Account</mat-label>
+                <input  id="bankAccount" class="input form-control"type="text" formControlName="bankAccount" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>Bank Branch</mat-label>
+                <input  id="bankBranch" class="input form-control"type="text" formControlName="bankBranch" mat-input>
+            </div>
+            <div class="col">
+                <mat-label>IFSC</mat-label>
+                <input  id="ifsc" class="input form-control"type="text" formControlName="ifsc" mat-input>
+            </div>
+            
+        </div>  
     <div class="row">
-        <div class="col-8"><h2>SETTLEMENT</h2></div>
-        <div class="col-2"><button (click)="downloadPDF()" class="exportpdf"  style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;"> <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-            <path d="M7 11l5 5l5 -5" />
-            <path d="M12 4l0 12" />
-          </svg></span>Export to PDF</button></div>
-        <div class="col-2">
-            <button class="exportexcel"  (click)="exportToExcel()" style="color: rgb(59, 11, 51); cursor: pointer; border-radius: 10px;">
-                <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                    <path d="M7 11l5 5l5 -5" />
-                    <path d="M12 4l0 12" />
-                  </svg></span>
-                Export to Excel
-            </button>
+        <div class="col">
+            <mat-label>Pension Status</mat-label>
+            <select class="input form-select" id="pensionStatus" formControlName="pensionStatus">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <div class="col">
+            <mat-label>DOCC</mat-label>
+            <input  id="docc" class="input form-control"type="text" formControlName="docc" mat-input>
+        </div>
+        <div class="col">
+            <mat-label>DOCR</mat-label>
+            <input  id="docr" class="input form-control"type="text" formControlName="docr" mat-input>
+        </div>
+        <div class="col">
+            <mat-label>Date Of NRFP(30%)</mat-label>
+            <input  id="dateOfNrfp" class="input form-control"type="text" formControlName="dateOfNrfp" mat-input>
+        </div>
+        <div class="col">
+            <mat-label>Original Pension</mat-label>
+            <input  id="originalPension" class="input form-control"type="text" formControlName="originalPension" mat-input>
+        </div>
+        <div class="col">
+            <mat-label>Bonus</mat-label>
+            <input  id="bonus" class="input form-control"type="text" formControlName="bonus" mat-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+            <h2 style="margin-top: 35px;">PENSION:</h2> 
+        </div> 
+        <div class="col">
+            <mat-label>Basic Pension</mat-label>
+            <input id="basicPension"  class="input form-control" type="text" formControlName="basicPension" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>Commuted Pension</mat-label>
+            <input id="commutedPesion" class="input form-control" type="text" formControlName="commutedPesion" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>Reduced Pension</mat-label>
+            <input id="reducedPension" class="input form-control" type="text" formControlName="reducedPension" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>Additional Pension</mat-label>
+            <input id="additionalPension" class="input form-control" type="text" formControlName="additionalPension" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>DA</mat-label>
+            <input id="da" class="input form-control" type="text" formControlName="da" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>MA</mat-label>
+            <input id="ma" class="input form-control" type="text" formControlName="ma" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>Gross Pension</mat-label>
+            <input id="grossPension" class="input form-control" type="text" formControlName="grossPension" mat-input >
         </div>
     </div>
-    <!-- <div class="card filter-row mb-4"> -->
-        <!-- <div class="row">
-          <div class="col-2 search-container">
-            <div class="search-icon">
-              <input matInput #input type="text" id="search-input" class="search-input" placeholder="Search Emp Id/Name">
-              <mat-icon>search</mat-icon>
-            </div>
-          </div> -->
-          <!-- <div class="col-2">
-            <input class="input form-control" type="text" name="Search" matInput formControlName="filter" >
-          </div> -->
-        <!-- </div> -->
+    <div class="row">
+        <div class="col-1">
+            <h2 style="margin-top: 35px;">LESS:</h2> 
+        </div>
+        <div class="col">
+            <mat-label>FSF</mat-label>
+            <input id="fsf" class="input form-control" type="text" formControlName="fsf" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>FA</mat-label>
+            <input id="fa" class="input form-control" type="text" formControlName="fa" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>NHIS</mat-label>
+            <input id="nhis" class="input form-control" type="text" formControlName="nhis" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>TDS</mat-label>
+            <input id="tds" class="input form-control" type="text" formControlName="tds" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>Misc</mat-label>
+            <input id="misc" class="input form-control" type="text" formControlName="misc" mat-input >
+        </div>
+        <div class="col">
+            <mat-label>Total  Deductions</mat-label>
+            <input id="totalDeductions" class="input form-control" type="text" formControlName="totalDeductions" mat-input >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col">
+            <mat-label>Net Pension</mat-label>
+            <input id="netPension" class="input form-control" type="text" formControlName="netPension" mat-input >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-label>Type Of Retirement</mat-label>
+            <select class="input form-select" id="retirementType" formControlName="retirementType" [(ngModel)]="selectedRetirementType">
+                <option value="provisional">provisional</option>
+                <option value="Regular">Regular</option>
+                <option value="Family">Family</option>
+                <option value="Dependent">Dependent</option>
+         </select>
+        </div> 
+         <div class="col" *ngIf="selectedRetirementType === 'Regular'">
+            <mat-label >Name Of Spouse</mat-label>
+            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input>
         
-<!--     
-      </div> -->
-      <form [formGroup]="settlement">
-        <div class="row">
-            <div class="col-2">
-                <mat-label>Vr.No</mat-label>
-                <input id="vrno" class="input form-control"  type="text" formControlName="vrno" mat-input>
-            </div>   
-            <div class="col-2">
-                <mat-label>Date</mat-label>
-                <input id="date" class="input form-control"  type="date" formControlName="date" mat-input>
-           </div>    
-        </div></form>
+            <!-- <mat-label>Name Of Spouse</mat-label>
+            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input> -->
+         </div>
+         <div class="col" *ngIf="selectedRetirementType === 'Regular'">
+            <mat-label >Dob Of Spouse</mat-label>
+      <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input>
+            <!-- <mat-label>Dob Of Spouse</mat-label>
+            <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input> -->
+         </div>
+         <div class="col" *ngIf="selectedRetirementType === 'Regular'">
+            <mat-label>Conversion</mat-label>
+            <select class="input form-select" id="conversion" formControlName="conversion" [(ngModel)]="selectedType">
+                <option value="provisional">Yes</option>
+                <option value="Regular">No</option>
+                
+         </select>
+        </div>
+        <div class="col" *ngIf="selectedRetirementType === 'provisional'">
+            <mat-label >Name Of Spouse</mat-label>
+            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input>
+        
+            <!-- <mat-label>Name Of Spouse</mat-label>
+            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input> -->
+         </div>
+         <div class="col" *ngIf="selectedRetirementType === 'provisional'">
+            <mat-label >Dob Of Spouse</mat-label>
+      <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input>
+            <!-- <mat-label>Dob Of Spouse</mat-label>
+            <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input> -->
+         </div>
+         <div class="col" *ngIf="selectedRetirementType === 'provisional'">
+            <mat-label>Conversion</mat-label>
+            <select class="input form-select" id="conversion" formControlName="conversion" [(ngModel)]="selectedType2" >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                
+         </select>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="selectedType2 === 'Yes'"><div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>DOC</mat-label>
+        <input id="doc" class="input form-control" type="text" formControlName="doc" mat-input>
+     </div>
+     <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Name Of The Pensioner</mat-label>
+        <input id="pensionerName" class="input form-control" type="text" formControlName="pensionerName" mat-input>
+     </div>
+     <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Dob Of New Pensioner</mat-label>
+        <input id="pensionerDob" class="input form-control" type="text" formControlName="pensionerDob" mat-input>
+     </div>
+        
    
-      
-    <div #content class="  tablecolor">
-        <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef style="border-top-left-radius:20px;border-bottom-left-radius:20px"><span>S.NO</span></th>
-                <td mat-cell *matCellDef="let element">{{element.position}}</td>
-            </ng-container>
-            <ng-container matColumnDef="ppoNo">
-                <th mat-header-cell *matHeaderCellDef><span>PPO No</span></th>
-                <td mat-cell *matCellDef="let element">{{element.ppoNo}}</td>
-            </ng-container>
-            <ng-container matColumnDef="name" >
-                <th mat-header-cell *matHeaderCellDef><span>Name</span></th>
-                <td mat-cell *matCellDef="let element">{{element.name}}</td>
-            </ng-container>
-            <ng-container  matColumnDef="totalPay">
-                <th mat-header-cell *matHeaderCellDef><span>Gross Payable</span></th>
-                <td mat-cell *matCellDef="let element">{{element.totalPay}}</td>
-            </ng-container>
-            <ng-container matColumnDef="totalDeductions">
-                <th mat-header-cell *matHeaderCellDef><span>Deductions</span></th>
-                <td mat-cell *matCellDef="let element">{{element.totalDeductions}}</td>
-            </ng-container>
-            <ng-container matColumnDef="netPayable">
-                <th mat-header-cell *matHeaderCellDef><span>Net Payable</span></th>
-                <td mat-cell *matCellDef="let element">{{element.netPayable}}</td>
-            </ng-container>
-            <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef style="border-bottom-right-radius: 20px; border-top-right-radius:20px"><span>ACTION</span></th>
-                <td mat-cell *matCellDef="let element">
-                    <a><mat-icon routerLink="/pension/payment-settlement-screen3" >update</mat-icon></a>
-                    <mat-icon style="margin-left: 5px;">visibility</mat-icon>
-                </td>
-            </ng-container>
+
+
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Address</mat-label>
+        <input id="address2" class="input form-comtrol" type="text" formControlName="address2" mat-input>
+    </div>  
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Mobile Number</mat-label>
+        <input id="mobileNum" class="input form-comtrol" type="text" formControlName="mobileNum" mat-input>
+    </div>  
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Email ID</mat-label>
+        <input id="email" class="input form-comtrol" type="text" formControlName="email" mat-input>
+    </div>  
+    </div>
+    <div class="row"  *ngIf="selectedType2 === 'Yes'">
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Pan Number</mat-label>
+        <input id="panNum" class="input form-comtrol" type="text" formControlName="panNum" mat-input>
+    </div>  
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Aadhar Number</mat-label>
+        <input id="aadhar" class="input form-comtrol" type="text" formControlName="aadhar" mat-input>
+    </div> 
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Bank Name</mat-label>
+        <input id="bankName2" class="input form-comtrol" type="text" formControlName="bankName2" mat-input>
+    </div>   
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Account Number</mat-label>
+        <input id="accountNumber" class="input form-comtrol" type="text" formControlName="accountNumber" mat-input>
+    </div>  
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>Bank Branch</mat-label>
+        <input id="bankBranch2" class="input form-comtrol" type="text" formControlName="bankBranch2" mat-input>
+    </div>  
+    <div class="col" *ngIf="selectedType2 === 'Yes'">
+        <mat-label>IFSC</mat-label>
+        <input id="ifscCode" class="input form-comtrol" type="text" formControlName="ifscCode" mat-input>
+    </div>     
+</div>
+        
+   <div class="row" *ngIf="selectedType === 'Yes'">
+     <div class="col" *ngIf="selectedType === 'Yes'">
+    <mat-label>DOC</mat-label>
+    <input id="doc" class="input form-control" type="text" formControlName="doc" mat-input>
+ </div>
+ <div class="col" *ngIf="selectedType === 'Yes'">
+    <mat-label>Name Of The Pensioner</mat-label>
+    <input id="pensionerName" class="input form-control" type="text" formControlName="pensionerName" mat-input>
+ </div>
+ <div class="col" *ngIf="selectedType === 'Yes'">
+    <mat-label>Dob Of New Pensioner</mat-label>
+    <input id="pensionerDob" class="input form-control" type="text" formControlName="pensionerDob" mat-input>
+ </div>
+<div class="col" *ngIf="selectedType === 'Yes'">
+    <mat-label>Address</mat-label>
+    <input id="address2" class="input form-comtrol" type="text" formControlName="address2" mat-input>
+</div>  
+<div class="col" *ngIf="selectedType === 'Yes'">
+    <mat-label>Mobile Number</mat-label>
+    <input id="mobileNum" class="input form-comtrol" type="text" formControlName="mobileNum" mat-input>
+</div>  
+<div class="col" *ngIf="selectedType === 'Yes'">
+    <mat-label>Email ID</mat-label>
+    <input id="email" class="input form-comtrol" type="text" formControlName="email" mat-input>
+</div>  </div>
+        
+      <div class="row" *ngIf="selectedType === 'Yes'">
+        <div class="col" *ngIf="selectedType === 'Yes'">
+            <mat-label>Pan Number</mat-label>
+            <input id="panNum" class="input form-comtrol" type="text" formControlName="panNum" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType === 'Yes'">
+            <mat-label>Aadhar Number</mat-label>
+            <input id="aadhar" class="input form-comtrol" type="text" formControlName="aadhar" mat-input>
+        </div> 
+        <div class="col" *ngIf="selectedType === 'Yes'">
+            <mat-label>Bank Name</mat-label>
+            <input id="bankName2" class="input form-comtrol" type="text" formControlName="bankName2" mat-input>
+        </div>   
+        <div class="col" *ngIf="selectedType === 'Yes'">
+            <mat-label>Account Number</mat-label>
+            <input id="accountNumber" class="input form-comtrol" type="text" formControlName="accountNumber" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType === 'Yes'">
+            <mat-label>Bank Branch</mat-label>
+            <input id="bankBranch2" class="input form-comtrol" type="text" formControlName="bankBranch2" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType === 'Yes'">
+            <mat-label>IFSC</mat-label>
+            <input id="ifscCode" class="input form-comtrol" type="text" formControlName="ifscCode" mat-input>
+        </div>     
+   
+
+      </div>
+
+        <div class="row" *ngIf="selectedRetirementType === 'Family'">
+            <div class="col-3" *ngIf="selectedRetirementType === 'Family'">
+                <mat-label>Name Of Employee/old Pensioner </mat-label>
+                <input id="oldPensioner1" type="text" class="input form-comtrol" formControlName="oldPensioner1" mat-input >
+            </div>
+            <div class="col-3" *ngIf="selectedRetirementType === 'Family'">
+                <mat-label>DOD</mat-label>
+                <input id="dod1" type="text" class="input form-comtrol" formControlName="dod1" mat-input >
+            </div>
+        </div>
+           
+           
             
-            <tr mat-header-row  *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </div>
+            <div class="row"  *ngIf="selectedRetirementType === 'Dependent'">
+                <div class="col-3" *ngIf="selectedRetirementType === 'Dependent'">
+                    <mat-label>Name Of Employee/old Pensioner </mat-label>
+                    <input id="oldPensioner1" type="text" class="input form-comtrol" formControlName="oldPensioner1" mat-input >
+                </div>
+                <div class="col-3" *ngIf="selectedRetirementType === 'Dependent'">
+                    <mat-label>DOD</mat-label>
+                    <input id="dod1" type="text" class="input form-comtrol" formControlName="dod1" mat-input >
+                </div>
+            </div>
+           
+
+    
+    </form>
 </div>
-<div class="container">
-    <div style="display: flex; margin-top: 20px;justify-content: center;">
-        <section><button routerLink="/pension/payment-settlement" class="backbutton">BACK</button></section>
-        <section><button class="submit" style="margin-left:10px">submit</button></section>
-    </div>
-</div>
-<main></main>

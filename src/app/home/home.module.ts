@@ -19,6 +19,7 @@ import { ArrearScreen1Component } from '../all-component/arrear-screen1/arrear-s
 import { ArrearScreen2Component } from '../all-component/arrear-screen2/arrear-screen2.component';
 import { ArrearScreen3Component } from '../all-component/arrear-screen3/arrear-screen3.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -44,7 +45,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatInputModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ]
 })
 export class HomeModule { }
