@@ -25,6 +25,7 @@ selectedType2: string = '';
       name:['',Validators.required],
       designation:['',Validators.required],
       officeCode:['',Validators.required],
+      officeName:['',Validators.required],
       grade:['',Validators.required],
       dob:['',Validators.required],
       age:['',Validators.required],

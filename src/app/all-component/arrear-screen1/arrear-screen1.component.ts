@@ -10,6 +10,9 @@ export interface settlement{
   totalPay:number;
   totalDeductions:number;
   netPayable:number;
+ 
+  deduction:string;
+  Payable:string;
   action:string;
 }
 const  ELEMENT_DATA:settlement[] = [
@@ -20,6 +23,9 @@ const  ELEMENT_DATA:settlement[] = [
   totalPay:45000,
   totalDeductions:56000,
   netPayable:16000,
+  
+  deduction:'858',
+  Payable:'487',
   action:'update'
 },
 {
@@ -29,6 +35,9 @@ const  ELEMENT_DATA:settlement[] = [
   totalPay:46000,
   totalDeductions:86000,
   netPayable:16000,
+
+  deduction:'45',
+  Payable:'488',
   action:'update'
 }
 ]
@@ -39,7 +48,7 @@ const  ELEMENT_DATA:settlement[] = [
 })
 export class ArrearScreen1Component {
   dataSource = new MatTableDataSource<settlement>(ELEMENT_DATA);
-  displayedColumns: string[] = ['position', 'date', 'voucherNo', 'totalPay', 'totalDeductions', 'netPayable', 'action'];
+  displayedColumns: string[] = ['position', 'date', 'voucherNo', 'totalPay', 'totalDeductions', 'netPayable','deduction','Payable', 'action'];
   @ViewChild('content', { static: false }) content!: ElementRef;
   
   downloadPDF(): void {

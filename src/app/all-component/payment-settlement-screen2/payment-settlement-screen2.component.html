@@ -2,11 +2,11 @@
     <h1 class="pensiondetails">Pension Details</h1>
     <form [formGroup]="pension">
         <div class="row">
-            <div class="col">
+            <div class="col-1">
                 <mat-label>PPO NO</mat-label>
                 <input  id="ppo" class="input form-control"type="text" formControlName="ppo" mat-input>
             </div>
-            <div class="col">
+            <div class="col-2">
                 <mat-label>Name</mat-label>
                 <input  id="name" class="input form-control"type="text" formControlName="name" mat-input>
             </div>
@@ -19,6 +19,10 @@
                 <input  id="officeCode" class="input form-control"type="text" formControlName="officeCode" mat-input>
             </div>
             <div class="col">
+                <mat-label>Office Name</mat-label>
+                <input  id="officeName" class="input form-control"type="text" formControlName="officeName" mat-input>
+            </div>
+            <div class="col">
                 <mat-label>Grade</mat-label>
                 <input  id="grade" class="input form-control"type="text" formControlName="grade" mat-input>
             </div>
@@ -26,7 +30,7 @@
                 <mat-label>DOB</mat-label>
                 <input  id="dob" class="input form-control" type="date" formControlName="dob" mat-input>
             </div>
-            <div class="col">
+            <div class="col-1">
                 <mat-label>Age</mat-label>
                 <input  id="age" class="input form-control"type="text" formControlName="age" mat-input>
             </div>
@@ -70,6 +74,187 @@
             </div>
             
         </div>  
+        <div class="row">
+            <div class="col-3">
+                <mat-label>Type Of Pension</mat-label>
+                <select class="input form-select" id="retirementType" formControlName="retirementType" [(ngModel)]="selectedRetirementType">
+                    <option value="provisional">provisional</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Family">Family</option>
+                    <option value="Dependent">Dependent</option>
+             </select>
+            </div> 
+             <div class="col" *ngIf="selectedRetirementType === 'Regular'">
+                <mat-label >Name Of Spouse</mat-label>
+                <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input>
+             </div>
+             <div class="col" *ngIf="selectedRetirementType === 'Regular'">
+                <mat-label >Dob Of Spouse</mat-label>
+                <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input>
+            </div>
+            <div class="col" *ngIf="selectedRetirementType === 'Regular'">
+                <mat-label>Conversion</mat-label>
+                <select class="input form-select" id="conversion" formControlName="conversion" [(ngModel)]="selectedType">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="col" *ngIf="selectedRetirementType === 'provisional'">
+                <mat-label >Name Of Spouse</mat-label>
+                <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input>
+            </div>
+             <div class="col" *ngIf="selectedRetirementType === 'provisional'">
+                <mat-label >Dob Of Spouse</mat-label>
+               <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input>
+             </div>
+             <div class="col" *ngIf="selectedRetirementType === 'provisional'">
+                <mat-label>Conversion</mat-label>
+                <select class="input form-select" id="conversion" formControlName="conversion" [(ngModel)]="selectedType2" >
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col" *ngIf="selectedType === 'Yes'">
+                <mat-label>DOC</mat-label>
+                <input id="doc" class="input form-control" type="text" formControlName="doc" mat-input>
+            </div>
+            <div class="col" *ngIf="selectedType === 'Yes'">
+                <mat-label>Name Of New Pensioner</mat-label>
+                <input id="pensionerName" class="input form-control" type="text" formControlName="pensionerName" mat-input>
+            </div>
+             <div class="col" *ngIf="selectedType === 'Yes'">
+                <mat-label>Dob Of New Pensioner</mat-label>
+                <input id="pensionerDob" class="input form-control" type="text" formControlName="pensionerDob" mat-input>
+            </div>
+            <div class="col" *ngIf="selectedType === 'Yes'">
+                <mat-label>Address</mat-label>
+                <input id="address2" class="input form-comtrol" type="text" formControlName="address2" mat-input>
+            </div>  
+            <div class="col" *ngIf="selectedType === 'Yes'">
+                <mat-label>Mobile Number</mat-label>
+                <input id="mobileNum" class="input form-comtrol" type="text" formControlName="mobileNum" mat-input>
+            </div>  
+            <div class="col" *ngIf="selectedType === 'Yes'">
+                <mat-label>Email ID</mat-label>
+                <input id="email" class="input form-comtrol" type="text" formControlName="email" mat-input>
+            </div>  
+        </div>
+               
+        <div class="row">
+               <div class="col" *ngIf="selectedType === 'Yes'">
+                   <mat-label>Pan Number</mat-label>
+                   <input id="panNum" class="input form-comtrol" type="text" formControlName="panNum" mat-input>
+               </div>  
+               <div class="col" *ngIf="selectedType === 'Yes'">
+                   <mat-label>Aadhar Number</mat-label>
+                   <input id="aadhar" class="input form-comtrol" type="text" formControlName="aadhar" mat-input>
+               </div> 
+               <div class="col" *ngIf="selectedType === 'Yes'">
+                   <mat-label>Bank Name</mat-label>
+                   <input id="bankName2" class="input form-comtrol" type="text" formControlName="bankName2" mat-input>
+               </div>   
+               <div class="col" *ngIf="selectedType === 'Yes'">
+                   <mat-label>Account Number</mat-label>
+                   <input id="accountNumber" class="input form-comtrol" type="text" formControlName="accountNumber" mat-input>
+               </div>  
+               <div class="col" *ngIf="selectedType === 'Yes'">
+                   <mat-label>Bank Branch</mat-label>
+                   <input id="bankBranch2" class="input form-comtrol" type="text" formControlName="bankBranch2" mat-input>
+               </div>  
+               <div class="col" *ngIf="selectedType === 'Yes'">
+                   <mat-label>IFSC</mat-label>
+                   <input id="ifscCode" class="input form-comtrol" type="text" formControlName="ifscCode" mat-input>
+               </div>     
+          
+       
+        </div>
+    
+        <div class="row" >
+            <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>DOC</mat-label>
+            <input id="doc" class="input form-control" type="text" formControlName="doc" mat-input>
+         </div>
+         <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Name Of New Pensioner</mat-label>
+            <input id="pensionerName" class="input form-control" type="text" formControlName="pensionerName" mat-input>
+         </div>
+         <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Dob Of New Pensioner</mat-label>
+            <input id="pensionerDob" class="input form-control" type="text" formControlName="pensionerDob" mat-input>
+         </div>
+            
+       
+    
+    
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Address</mat-label>
+            <input id="address2" class="input form-comtrol" type="text" formControlName="address2" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Mobile Number</mat-label>
+            <input id="mobileNum" class="input form-comtrol" type="text" formControlName="mobileNum" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Email ID</mat-label>
+            <input id="email" class="input form-comtrol" type="text" formControlName="email" mat-input>
+        </div>  
+        </div>
+        <div class="row"  >
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Pan Number</mat-label>
+            <input id="panNum" class="input form-comtrol" type="text" formControlName="panNum" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Aadhar Number</mat-label>
+            <input id="aadhar" class="input form-comtrol" type="text" formControlName="aadhar" mat-input>
+        </div> 
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Bank Name</mat-label>
+            <input id="bankName2" class="input form-comtrol" type="text" formControlName="bankName2" mat-input>
+        </div>   
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Account Number</mat-label>
+            <input id="accountNumber" class="input form-comtrol" type="text" formControlName="accountNumber" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>Bank Branch</mat-label>
+            <input id="bankBranch2" class="input form-comtrol" type="text" formControlName="bankBranch2" mat-input>
+        </div>  
+        <div class="col" *ngIf="selectedType2 === 'Yes'">
+            <mat-label>IFSC</mat-label>
+            <input id="ifscCode" class="input form-comtrol" type="text" formControlName="ifscCode" mat-input>
+        </div>     
+    </div>
+            
+       
+    
+            <div class="row" *ngIf="selectedRetirementType === 'Family'">
+                <div class="col-3" *ngIf="selectedRetirementType === 'Family'">
+                    <mat-label>Name Of Employee/old Pensioner </mat-label>
+                    <input id="oldPensioner1" type="text" class="input form-comtrol" formControlName="oldPensioner1" mat-input >
+                </div>
+                <div class="col-3" *ngIf="selectedRetirementType === 'Family'">
+                    <mat-label>DOD</mat-label>
+                    <input id="dod1" type="text" class="input form-comtrol" formControlName="dod1" mat-input >
+                </div>
+            </div>
+               
+               
+                
+                <div class="row"  *ngIf="selectedRetirementType === 'Dependent'">
+                    <div class="col-3" *ngIf="selectedRetirementType === 'Dependent'">
+                        <mat-label>Name Of Employee/old Pensioner </mat-label>
+                        <input id="oldPensioner1" type="text" class="input form-comtrol" formControlName="oldPensioner1" mat-input >
+                    </div>
+                    <div class="col-3" *ngIf="selectedRetirementType === 'Dependent'">
+                        <mat-label>DOD</mat-label>
+                        <input id="dod1" type="text" class="input form-comtrol" formControlName="dod1" mat-input >
+                    </div>
+                </div>
+               
+    
     <div class="row">
         <div class="col">
             <mat-label>Pension Status</mat-label>
@@ -176,196 +361,7 @@
             <input id="netPension" class="input form-control" type="text" formControlName="netPension" mat-input >
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <mat-label>Type Of Retirement</mat-label>
-            <select class="input form-select" id="retirementType" formControlName="retirementType" [(ngModel)]="selectedRetirementType">
-                <option value="provisional">provisional</option>
-                <option value="Regular">Regular</option>
-                <option value="Family">Family</option>
-                <option value="Dependent">Dependent</option>
-         </select>
-        </div> 
-         <div class="col" *ngIf="selectedRetirementType === 'Regular'">
-            <mat-label >Name Of Spouse</mat-label>
-            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input>
-        
-            <!-- <mat-label>Name Of Spouse</mat-label>
-            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input> -->
-         </div>
-         <div class="col" *ngIf="selectedRetirementType === 'Regular'">
-            <mat-label >Dob Of Spouse</mat-label>
-      <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input>
-            <!-- <mat-label>Dob Of Spouse</mat-label>
-            <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input> -->
-         </div>
-         <div class="col" *ngIf="selectedRetirementType === 'Regular'">
-            <mat-label>Conversion</mat-label>
-            <select class="input form-select" id="conversion" formControlName="conversion" [(ngModel)]="selectedType">
-                <option value="provisional">Yes</option>
-                <option value="Regular">No</option>
-                
-         </select>
-        </div>
-        <div class="col" *ngIf="selectedRetirementType === 'provisional'">
-            <mat-label >Name Of Spouse</mat-label>
-            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input>
-        
-            <!-- <mat-label>Name Of Spouse</mat-label>
-            <input id="spouseName" class="input form-control" type="text" formControlName="spouseName" mat-input> -->
-         </div>
-         <div class="col" *ngIf="selectedRetirementType === 'provisional'">
-            <mat-label >Dob Of Spouse</mat-label>
-      <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input>
-            <!-- <mat-label>Dob Of Spouse</mat-label>
-            <input id="spouseDob" class="input form-control" type="text" formControlName="spouseDob" mat-input> -->
-         </div>
-         <div class="col" *ngIf="selectedRetirementType === 'provisional'">
-            <mat-label>Conversion</mat-label>
-            <select class="input form-select" id="conversion" formControlName="conversion" [(ngModel)]="selectedType2" >
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-                
-         </select>
-        </div>
-    </div>
-
-    <div class="row" *ngIf="selectedType2 === 'Yes'"><div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>DOC</mat-label>
-        <input id="doc" class="input form-control" type="text" formControlName="doc" mat-input>
-     </div>
-     <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Name Of The Pensioner</mat-label>
-        <input id="pensionerName" class="input form-control" type="text" formControlName="pensionerName" mat-input>
-     </div>
-     <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Dob Of New Pensioner</mat-label>
-        <input id="pensionerDob" class="input form-control" type="text" formControlName="pensionerDob" mat-input>
-     </div>
-        
-   
-
-
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Address</mat-label>
-        <input id="address2" class="input form-comtrol" type="text" formControlName="address2" mat-input>
-    </div>  
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Mobile Number</mat-label>
-        <input id="mobileNum" class="input form-comtrol" type="text" formControlName="mobileNum" mat-input>
-    </div>  
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Email ID</mat-label>
-        <input id="email" class="input form-comtrol" type="text" formControlName="email" mat-input>
-    </div>  
-    </div>
-    <div class="row"  *ngIf="selectedType2 === 'Yes'">
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Pan Number</mat-label>
-        <input id="panNum" class="input form-comtrol" type="text" formControlName="panNum" mat-input>
-    </div>  
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Aadhar Number</mat-label>
-        <input id="aadhar" class="input form-comtrol" type="text" formControlName="aadhar" mat-input>
-    </div> 
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Bank Name</mat-label>
-        <input id="bankName2" class="input form-comtrol" type="text" formControlName="bankName2" mat-input>
-    </div>   
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Account Number</mat-label>
-        <input id="accountNumber" class="input form-comtrol" type="text" formControlName="accountNumber" mat-input>
-    </div>  
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>Bank Branch</mat-label>
-        <input id="bankBranch2" class="input form-comtrol" type="text" formControlName="bankBranch2" mat-input>
-    </div>  
-    <div class="col" *ngIf="selectedType2 === 'Yes'">
-        <mat-label>IFSC</mat-label>
-        <input id="ifscCode" class="input form-comtrol" type="text" formControlName="ifscCode" mat-input>
-    </div>     
-</div>
-        
-   <div class="row" *ngIf="selectedType === 'Yes'">
-     <div class="col" *ngIf="selectedType === 'Yes'">
-    <mat-label>DOC</mat-label>
-    <input id="doc" class="input form-control" type="text" formControlName="doc" mat-input>
- </div>
- <div class="col" *ngIf="selectedType === 'Yes'">
-    <mat-label>Name Of The Pensioner</mat-label>
-    <input id="pensionerName" class="input form-control" type="text" formControlName="pensionerName" mat-input>
- </div>
- <div class="col" *ngIf="selectedType === 'Yes'">
-    <mat-label>Dob Of New Pensioner</mat-label>
-    <input id="pensionerDob" class="input form-control" type="text" formControlName="pensionerDob" mat-input>
- </div>
-<div class="col" *ngIf="selectedType === 'Yes'">
-    <mat-label>Address</mat-label>
-    <input id="address2" class="input form-comtrol" type="text" formControlName="address2" mat-input>
-</div>  
-<div class="col" *ngIf="selectedType === 'Yes'">
-    <mat-label>Mobile Number</mat-label>
-    <input id="mobileNum" class="input form-comtrol" type="text" formControlName="mobileNum" mat-input>
-</div>  
-<div class="col" *ngIf="selectedType === 'Yes'">
-    <mat-label>Email ID</mat-label>
-    <input id="email" class="input form-comtrol" type="text" formControlName="email" mat-input>
-</div>  </div>
-        
-      <div class="row" *ngIf="selectedType === 'Yes'">
-        <div class="col" *ngIf="selectedType === 'Yes'">
-            <mat-label>Pan Number</mat-label>
-            <input id="panNum" class="input form-comtrol" type="text" formControlName="panNum" mat-input>
-        </div>  
-        <div class="col" *ngIf="selectedType === 'Yes'">
-            <mat-label>Aadhar Number</mat-label>
-            <input id="aadhar" class="input form-comtrol" type="text" formControlName="aadhar" mat-input>
-        </div> 
-        <div class="col" *ngIf="selectedType === 'Yes'">
-            <mat-label>Bank Name</mat-label>
-            <input id="bankName2" class="input form-comtrol" type="text" formControlName="bankName2" mat-input>
-        </div>   
-        <div class="col" *ngIf="selectedType === 'Yes'">
-            <mat-label>Account Number</mat-label>
-            <input id="accountNumber" class="input form-comtrol" type="text" formControlName="accountNumber" mat-input>
-        </div>  
-        <div class="col" *ngIf="selectedType === 'Yes'">
-            <mat-label>Bank Branch</mat-label>
-            <input id="bankBranch2" class="input form-comtrol" type="text" formControlName="bankBranch2" mat-input>
-        </div>  
-        <div class="col" *ngIf="selectedType === 'Yes'">
-            <mat-label>IFSC</mat-label>
-            <input id="ifscCode" class="input form-comtrol" type="text" formControlName="ifscCode" mat-input>
-        </div>     
-   
-
-      </div>
-
-        <div class="row" *ngIf="selectedRetirementType === 'Family'">
-            <div class="col-3" *ngIf="selectedRetirementType === 'Family'">
-                <mat-label>Name Of Employee/old Pensioner </mat-label>
-                <input id="oldPensioner1" type="text" class="input form-comtrol" formControlName="oldPensioner1" mat-input >
-            </div>
-            <div class="col-3" *ngIf="selectedRetirementType === 'Family'">
-                <mat-label>DOD</mat-label>
-                <input id="dod1" type="text" class="input form-comtrol" formControlName="dod1" mat-input >
-            </div>
-        </div>
-           
-           
-            
-            <div class="row"  *ngIf="selectedRetirementType === 'Dependent'">
-                <div class="col-3" *ngIf="selectedRetirementType === 'Dependent'">
-                    <mat-label>Name Of Employee/old Pensioner </mat-label>
-                    <input id="oldPensioner1" type="text" class="input form-comtrol" formControlName="oldPensioner1" mat-input >
-                </div>
-                <div class="col-3" *ngIf="selectedRetirementType === 'Dependent'">
-                    <mat-label>DOD</mat-label>
-                    <input id="dod1" type="text" class="input form-comtrol" formControlName="dod1" mat-input >
-                </div>
-            </div>
-           
-
+    
     
     </form>
 </div>
