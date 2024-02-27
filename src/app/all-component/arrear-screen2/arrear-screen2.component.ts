@@ -19,8 +19,45 @@ arrear!:FormGroup;
 
   ngOnInit(): void {
     this.arrear=this.fb.group({
-    vrno:['',Validators.required],
-    date:['',Validators.required]
+    ppoNo:['',Validators.required],
+    name:['',Validators.required],
+    designation:['',Validators.required],
+    officeCode:['',Validators.required],
+    dob:['',Validators.required],
+    doa:['',Validators.required],
+    dor:['',Validators.required],
+    dod:['',Validators.required],
+    age:['',Validators.required],
+    arrearStartDate:['',Validators.required],
+    arrearEndDate:['',Validators.required],
+    duesBasicPension:['',Validators.required],
+    duesCommutedPension:['',Validators.required],
+    duesAdditionalPension:['',Validators.required],
+    pensionPayable:['',Validators.required],
+    duesDa:['',Validators.required],
+    duesMa:['',Validators.required],
+    totalDues:['',Validators.required],
+    drawnBasicPension:['',Validators.required],
+    drawnCommutedPension:['',Validators.required],
+    drwanAdditionalPension:['',Validators.required],
+    drawnPensionPayable:['',Validators.required],
+    drawnDa:['',Validators.required],
+    DrawnMa:['',Validators.required],
+    drawnTotalDues:['',Validators.required],
+    diffInPension:['',Validators.required],
+    diffInDcrg:['',Validators.required],
+    diffCommutation:['',Validators.required],
+    totalDifference:['',Validators.required],
+    recoveryOne:['',Validators.required],
+    recoveryTwo:['',Validators.required],
+    recoveryThree:['',Validators.required],
+    recoveryFour:['',Validators.required],
+    recoveryFive:['',Validators.required],
+    totalDeduction:['',Validators.required],
+    netPayable:['',Validators.required],
+   
+    
+
   });
 }
 

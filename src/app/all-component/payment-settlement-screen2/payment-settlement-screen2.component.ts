@@ -83,7 +83,20 @@ selectedType2: string = '';
 }
 
 
+calculateAge() {
+  const dobInput = document.getElementById('dob') as HTMLInputElement;
+    const dobValue = new Date(dobInput.value);
+    const today = new Date();
+    let age = today.getFullYear() - dobValue.getFullYear();
+    const monthDiff = today.getMonth() - dobValue.getMonth();
 
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dobValue.getDate())) {
+        age--;
+    }
+
+    const ageInput = document.getElementById('age') as HTMLInputElement;
+    ageInput.value = age.toString();
+}
       
   
 }

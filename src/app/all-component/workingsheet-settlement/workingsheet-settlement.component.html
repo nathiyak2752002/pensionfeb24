@@ -25,7 +25,7 @@
             </div>  
             <div class="col">
                 <mat-label >DOB</mat-label>
-                <input id="dob" type="date" class="input form-control" formControlName="dob" mat-input>
+                <input id="dob" type="date" class="input form-control" formControlName="dob" (change)="calculateAge()" mat-input>
             </div>
             <div class="col">
                 <mat-label>DOA</mat-label>
